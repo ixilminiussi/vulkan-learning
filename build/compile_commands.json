@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/ixilminiussi/Desktop/learning/vulkan-learning/build",
+  "command": "/usr/bin/c++ -g -g -O0 -std=gnu++17 -o CMakeFiles/test.dir/main.cpp.o -c /home/ixilminiussi/Desktop/learning/vulkan-learning/main.cpp",
+  "file": "/home/ixilminiussi/Desktop/learning/vulkan-learning/main.cpp",
+  "output": "CMakeFiles/test.dir/main.cpp.o"
+},
+{
+  "directory": "/home/ixilminiussi/Desktop/learning/vulkan-learning/build",
+  "command": "/usr/bin/c++ -g -g -O0 -std=gnu++17 -o CMakeFiles/test.dir/vulkan-mesh.cpp.o -c /home/ixilminiussi/Desktop/learning/vulkan-learning/vulkan-mesh.cpp",
+  "file": "/home/ixilminiussi/Desktop/learning/vulkan-learning/vulkan-mesh.cpp",
+  "output": "CMakeFiles/test.dir/vulkan-mesh.cpp.o"
+},
+{
+  "directory": "/home/ixilminiussi/Desktop/learning/vulkan-learning/build",
+  "command": "/usr/bin/c++ -g -g -O0 -std=gnu++17 -o CMakeFiles/test.dir/vulkan-renderer.cpp.o -c /home/ixilminiussi/Desktop/learning/vulkan-learning/vulkan-renderer.cpp",
+  "file": "/home/ixilminiussi/Desktop/learning/vulkan-learning/vulkan-renderer.cpp",
+  "output": "CMakeFiles/test.dir/vulkan-renderer.cpp.o"
+}
+]
