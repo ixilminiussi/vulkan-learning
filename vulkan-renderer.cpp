@@ -459,6 +459,7 @@ void VulkanRenderer::createLogicalDevice()
     // Features
     vk::PhysicalDeviceFeatures deviceFeatures{}; // For now, no device features (tessellation etc.)
     deviceFeatures.samplerAnisotropy = true;
+    deviceFeatures.sampleRateShading = true;
     deviceCreateInfo.pEnabledFeatures = &deviceFeatures;
 
     // Create the logical device for the given physical device
@@ -846,7 +847,9 @@ void VulkanRenderer::createGraphicsPipeline()
     // Not for textures, only for edges
     vk::PipelineMultisampleStateCreateInfo multisamplingCreateInfo{};
     // Enable multisample shading or not
-    multisamplingCreateInfo.sampleShadingEnable = VK_FALSE;
+    multisamplingCreateInfo.sampleShadingEnable = VK_TRUE;
+    // Min fraction for sample shading; closer to one is smoother
+    multisamplingCreateInfo.minSampleShading = 0.2f;
     // Number of samples to use per fragment
     multisamplingCreateInfo.rasterizationSamples = msaaSamples;
 
