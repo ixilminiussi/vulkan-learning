@@ -1,8 +1,10 @@
 #include "vulkan-mesh.h"
 
 VulkanMesh::VulkanMesh(vk::PhysicalDevice physicalDeviceP, vk::Device deviceP, vk::Queue transferQueue,
-                       vk::CommandPool transferCommandPool, vector<Vertex> *vertices, vector<uint32_t> *indices)
-    : vertexCount(vertices->size()), indexCount(indices->size()), physicalDevice(physicalDeviceP), device(deviceP)
+                       vk::CommandPool transferCommandPool, std::vector<Vertex> *vertices,
+                       std::vector<uint32_t> *indices, int texIdP)
+    : vertexCount(vertices->size()), indexCount(indices->size()), physicalDevice(physicalDeviceP), device(deviceP),
+      texId(texIdP)
 {
     createVertexBuffer(transferQueue, transferCommandPool, vertices);
     createIndexBuffer(transferQueue, transferCommandPool, indices);
@@ -38,7 +40,7 @@ void VulkanMesh::destroyBuffers()
 }
 
 void VulkanMesh::createVertexBuffer(vk::Queue transferQueue, vk::CommandPool transferCommandPool,
-                                    vector<Vertex> *vertices)
+                                    std::vector<Vertex> *vertices)
 {
     vk::DeviceSize bufferSize = sizeof(Vertex) * vertices->size();
 
@@ -72,7 +74,7 @@ void VulkanMesh::createVertexBuffer(vk::Queue transferQueue, vk::CommandPool tra
 }
 
 void VulkanMesh::createIndexBuffer(vk::Queue transferQueue, vk::CommandPool transferCommandPool,
-                                   vector<uint32_t> *indices)
+                                   std::vector<uint32_t> *indices)
 {
     vk::DeviceSize bufferSize = sizeof(uint32_t) * indices->size();
 

@@ -51,19 +51,29 @@ build cmake_object_order_depends_target_test: phony || .
 
 build CMakeFiles/test.dir/main.cpp.o: CXX_COMPILER__test_unscanned_Debug /home/ixilminiussi/Desktop/learning/vulkan-learning/main.cpp || cmake_object_order_depends_target_test
   DEP_FILE = CMakeFiles/test.dir/main.cpp.o.d
-  FLAGS = -g -g -O0 -std=gnu++17
+  FLAGS = -w -g -g -O0 -std=gnu++17
+  INCLUDES = -I/home/ixilminiussi/Desktop/learning/vulkan-learning/.external/stb
+  OBJECT_DIR = CMakeFiles/test.dir
+  OBJECT_FILE_DIR = CMakeFiles/test.dir
+
+build CMakeFiles/test.dir/vulkan-mesh-model.cpp.o: CXX_COMPILER__test_unscanned_Debug /home/ixilminiussi/Desktop/learning/vulkan-learning/vulkan-mesh-model.cpp || cmake_object_order_depends_target_test
+  DEP_FILE = CMakeFiles/test.dir/vulkan-mesh-model.cpp.o.d
+  FLAGS = -w -g -g -O0 -std=gnu++17
+  INCLUDES = -I/home/ixilminiussi/Desktop/learning/vulkan-learning/.external/stb
   OBJECT_DIR = CMakeFiles/test.dir
   OBJECT_FILE_DIR = CMakeFiles/test.dir
 
 build CMakeFiles/test.dir/vulkan-mesh.cpp.o: CXX_COMPILER__test_unscanned_Debug /home/ixilminiussi/Desktop/learning/vulkan-learning/vulkan-mesh.cpp || cmake_object_order_depends_target_test
   DEP_FILE = CMakeFiles/test.dir/vulkan-mesh.cpp.o.d
-  FLAGS = -g -g -O0 -std=gnu++17
+  FLAGS = -w -g -g -O0 -std=gnu++17
+  INCLUDES = -I/home/ixilminiussi/Desktop/learning/vulkan-learning/.external/stb
   OBJECT_DIR = CMakeFiles/test.dir
   OBJECT_FILE_DIR = CMakeFiles/test.dir
 
 build CMakeFiles/test.dir/vulkan-renderer.cpp.o: CXX_COMPILER__test_unscanned_Debug /home/ixilminiussi/Desktop/learning/vulkan-learning/vulkan-renderer.cpp || cmake_object_order_depends_target_test
   DEP_FILE = CMakeFiles/test.dir/vulkan-renderer.cpp.o.d
-  FLAGS = -g -g -O0 -std=gnu++17
+  FLAGS = -w -g -g -O0 -std=gnu++17
+  INCLUDES = -I/home/ixilminiussi/Desktop/learning/vulkan-learning/.external/stb
   OBJECT_DIR = CMakeFiles/test.dir
   OBJECT_FILE_DIR = CMakeFiles/test.dir
 
@@ -75,9 +85,9 @@ build CMakeFiles/test.dir/vulkan-renderer.cpp.o: CXX_COMPILER__test_unscanned_De
 #############################################
 # Link the executable test
 
-build test: CXX_EXECUTABLE_LINKER__test_Debug CMakeFiles/test.dir/main.cpp.o CMakeFiles/test.dir/vulkan-mesh.cpp.o CMakeFiles/test.dir/vulkan-renderer.cpp.o
-  FLAGS = -g -g -O0
-  LINK_LIBRARIES = -lstbi  -lassimp  -lspdlog  -lglfw  -lvulkan  -ldl  -lpthread  -lX11  -lXxf86vm  -lXrandr  -lXi
+build test: CXX_EXECUTABLE_LINKER__test_Debug CMakeFiles/test.dir/main.cpp.o CMakeFiles/test.dir/vulkan-mesh-model.cpp.o CMakeFiles/test.dir/vulkan-mesh.cpp.o CMakeFiles/test.dir/vulkan-renderer.cpp.o
+  FLAGS = -w -g -g -O0
+  LINK_LIBRARIES = -lassimp  -lspdlog  -lglfw  -lvulkan  -ldl  -lpthread  -lX11  -lXxf86vm  -lXrandr  -lXi
   OBJECT_DIR = CMakeFiles/test.dir
   POST_BUILD = :
   PRE_LINK = :

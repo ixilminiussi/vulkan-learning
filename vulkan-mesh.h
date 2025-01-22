@@ -3,7 +3,6 @@
 #include <GLFW/glfw3.h>
 
 #include <vector>
-using std::vector;
 
 #include "vulkan-utilities.h"
 
@@ -16,7 +15,8 @@ class VulkanMesh
 {
   public:
     VulkanMesh(vk::PhysicalDevice physicalDeviceP, vk::Device deviceP, vk::Queue transferQueue,
-               vk::CommandPool transferCommandPool, vector<Vertex> *vertices, vector<uint32_t> *indices);
+               vk::CommandPool transferCommandPool, std::vector<Vertex> *vertices, std::vector<uint32_t> *indices,
+               int texIdP);
     VulkanMesh() = default;
     ~VulkanMesh() = default;
 
@@ -33,6 +33,10 @@ class VulkanMesh
     {
         model.model = modelP;
     }
+    int getTexId() const
+    {
+        return texId;
+    }
 
     void destroyBuffers();
 
@@ -40,6 +44,7 @@ class VulkanMesh
     size_t vertexCount{0};
     size_t indexCount{0};
     Model model;
+    int texId;
 
     vk::Buffer vertexBuffer;
     vk::PhysicalDevice physicalDevice;
@@ -48,8 +53,10 @@ class VulkanMesh
     vk::Buffer indexBuffer;
     vk::DeviceMemory indexBufferMemory;
 
-    void createVertexBuffer(vk::Queue transferQueue, vk::CommandPool transferCommandPool, vector<Vertex> *vertices);
-    void createIndexBuffer(vk::Queue transferQueue, vk::CommandPool transferCommandPool, vector<uint32_t> *indices);
+    void createVertexBuffer(vk::Queue transferQueue, vk::CommandPool transferCommandPool,
+                            std::vector<Vertex> *vertices);
+    void createIndexBuffer(vk::Queue transferQueue, vk::CommandPool transferCommandPool,
+                           std::vector<uint32_t> *indices);
     uint32_t findMemoryTypeIndex(vk::PhysicalDevice physicalDevice, uint32_t allowedTypes,
                                  vk::MemoryPropertyFlags properties);
 };
